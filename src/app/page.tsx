@@ -1,5 +1,11 @@
-const Home = () => {
-  return <div>Hello nextjs</div>
-}
+import { Header } from "@/components/header";
 
-export default Home
+const Home = () => {
+  return (
+    <>
+      <Header />
+    </>
+  );
+};
+
+export default Home;
