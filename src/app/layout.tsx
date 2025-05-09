@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "@/components/ui/sonner";
 import "./globals.css";
+import Providers from "@/contexts/providers";
 
 export const metadata: Metadata = {
   title: "TrackZone",
@@ -16,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <main>{children}</main>
+        <main>
+          <Providers>{children}</Providers>
+        </main>
         <Toaster />
       </body>
     </html>
