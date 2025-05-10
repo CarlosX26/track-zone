@@ -10,9 +10,12 @@ import {
 } from "@/components/ui/table";
 import { Loader2 } from "lucide-react";
 import { useVehicles } from "@/hooks/data/useVehicles";
+import { useFilter } from "@/contexts/filter";
 import InfiniteScrollContainer from "../infiniteScrollContainer/InfiniteScrollContainer";
 
 export function VehicleTable() {
+  const { filter } = useFilter();
+
   const {
     data,
     isPending,
@@ -22,7 +25,10 @@ export function VehicleTable() {
     hasNextPage,
     isFetching,
     isFetchingNextPage,
-  } = useVehicles();
+  } = useVehicles({
+    filter: filter.search,
+    type: filter.type,
+  });
 
   const vehicles = data?.pages.flatMap((page) => page.vehicles) || [];
 
