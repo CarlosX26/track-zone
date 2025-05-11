@@ -38,6 +38,8 @@ export const VehicleMap = () => {
           defaultZoom={4}
           gestureHandling={"greedy"}
           disableDefaultUI={true}
+          fullscreenControl
+          zoomControl
         >
           {vehiclesTracked.map((vehicle, index) => (
             <VehicleMarker vehicle={vehicle} key={index} />
