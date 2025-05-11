@@ -119,14 +119,6 @@ npm test
 yarn test
 ```
 
-Para executar testes no modo de observação:
-
-```bash
-npm test -- --watch
-# ou
-yarn test --watch
-```
-
 Para executar testes para um componente específico:
 
 ```bash
@@ -150,17 +142,17 @@ yarn cypress:open
 Para executar testes Cypress em modo headless:
 
 ```bash
-npm run cypress:run
+npm run e2e:headless
 # ou
-yarn cypress:run
+yarn e2e:headless
 ```
 
 Para executar tanto o servidor de desenvolvimento quanto os testes Cypress:
 
 ```bash
-npm run cy:open
+npm run cypress:e2e
 # ou
-yarn cy:open
+yarn cypress:e2e
 ```
 
 ## Estrutura do Projeto
