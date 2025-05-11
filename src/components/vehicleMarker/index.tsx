@@ -33,6 +33,15 @@ export const VehicleMarker = ({ vehicle }: IVehicleMarkerProps) => {
               <div>
                 {vehicle.lat.toFixed(6)}, {vehicle.lng.toFixed(6)}
               </div>
+
+              <a
+                href={`https://www.google.com/maps?q=${vehicle.lat},${vehicle.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-500 underline text-xs"
+              >
+                Ver no Google Maps
+              </a>
             </div>
             <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-slate-700" />
           </div>
