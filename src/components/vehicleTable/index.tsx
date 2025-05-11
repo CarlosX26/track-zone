@@ -11,9 +11,9 @@ import {
 import { Loader2 } from "lucide-react";
 import { useVehicles } from "@/hooks/data/useVehicles";
 import { useFilter } from "@/contexts/filter";
-import InfiniteScrollContainer from "../infiniteScrollContainer/InfiniteScrollContainer";
+import { InfiniteScrollContainer } from "../infiniteScrollContainer";
 
-export function VehicleTable() {
+export const VehicleTable = () => {
   const { filter } = useFilter();
 
   const {
@@ -35,7 +35,7 @@ export function VehicleTable() {
   if (isPending) {
     return (
       <div className="mt-32">
-        <Loader2 className="animate-spin mx-auto" />
+        <Loader2 data-testid="loader-icon" className="animate-spin mx-auto" />
       </div>
     );
   }
@@ -72,7 +72,7 @@ export function VehicleTable() {
 
           {isFetchingNextPage && (
             <div className="flex justify-center py-4">
-              <Loader2 className="animate-spin" />
+              <Loader2 data-testid="loader-icon-next-page" className="animate-spin" />
             </div>
           )}
         </div>
@@ -87,4 +87,4 @@ export function VehicleTable() {
       )}
     </>
   );
-}
+};
