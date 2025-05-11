@@ -1,5 +1,5 @@
 import api from "@/global/config/axios";
-import { IVehicle } from "@/interfaces/vehicle";
+import { IVehicle, IVehicleTracked } from "@/interfaces/vehicle";
 
 interface IVehicleParams {
   filter?: string;
@@ -11,6 +11,7 @@ interface IVehicleParams {
 interface IVehicleListResponse {
   content: {
     vehicles: IVehicle[];
+    locationVehicles?: IVehicleTracked[] | undefined;
     totalPages: number;
     page: number;
     perPage: number;
