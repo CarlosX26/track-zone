@@ -1,16 +1,16 @@
 import { useInView } from "react-intersection-observer";
 
-interface InfiniteScrollContainerProps {
+interface IInfiniteScrollContainerProps {
   children: React.ReactNode;
   onBottomReached: () => void;
   className?: string;
 }
 
-export default function InfiniteScrollContainer({
+export const InfiniteScrollContainer = ({
   children,
   onBottomReached,
   className,
-}: InfiniteScrollContainerProps) {
+}: IInfiniteScrollContainerProps) => {
   const { ref } = useInView({
     rootMargin: "100px",
     onChange(inView) {
@@ -24,4 +24,4 @@ export default function InfiniteScrollContainer({
       <div ref={ref} />
     </div>
   );
-}
+};
