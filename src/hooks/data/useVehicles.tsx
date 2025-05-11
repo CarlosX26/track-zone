@@ -13,5 +13,6 @@ export function useVehicles({ filter, type }: IUseVehiclesParams) {
     queryFn: ({ pageParam }) => getVehicles({ page: pageParam, type, filter }),
     getNextPageParam: (response) =>
       response.page < response.totalPages ? response.page + 1 : undefined,
+    refetchInterval: 2 * 60 * 1000,
   });
 }
